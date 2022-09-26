@@ -1,0 +1,61 @@
+:root {
+  --color-primary: #4CAF50;
+  --color-primary-back: #cff3d0;
+  --color-secondary: #0f0;
+  --color-tertiary: #00f;
+}
+
+body {
+  font-family: Trebuchet MS, sans-serif;
+  font-size: 20px;
+}
+
+button {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+dialog {
+  background-color: var(--color-primary-back);
+  border: var(--color-primary) solid 2px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 4px 2px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 15px 32px;
+}
+
+input {
+  background-color: white;
+  border: var(--color-primary) solid 2px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#userPanel p {
+  font-size: 26px;
+}

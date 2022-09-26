@@ -1,0 +1,28 @@
+[hidden] {
+  display: none !important;
+}
+
+.container {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  gap: 30px;
+}
+
+dialog {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}
+
+#guestPanel {
+  display: flex;
+}
+
+#userPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

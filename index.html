@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+  <!-- <script src="app.js" type="module"></script> -->
+
+  <title>Feel Authority!</title>
+</head id="head">
+
+<body id="body">
+  <div id="guestPanel" class="container">
+    <button id="regBtn">Register</button>
+    <button id="loginBtn">Log In</button>
+  </div>
+
+  <div id="userPanel" class="container" hidden>
+    <p>You are logged in as <b id="userLabel">User</b></p>
+    <button id="logoutBtn">Log Out</button>
+  </div>
+
+  <dialog id="regDialog">
+    <form action="javascript:" id="regForm">
+      <input name="login" placeholder="Username">
+      <input name="pass" type="password" placeholder="Password">
+      <button>Register</button>
+    </form>
+  </dialog>
+
+  <dialog id="loginDialog">
+    <form action="javascript:" id="loginForm">
+      <input name="login" placeholder="Username">
+      <input name="pass" type="password" placeholder="Password">
+      <button>Log In</button>
+    </form>
+</body>
+
+</html>
