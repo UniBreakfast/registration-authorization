@@ -1,0 +1,20 @@
+{
+  "name": "registration-authorization",
+  "version": "1.0.0",
+  "description": "What are possible next steps?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UniBreakfast/registration-authorization.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UniBreakfast/registration-authorization/issues"
+  },
+  "homepage": "https://github.com/UniBreakfast/registration-authorization#readme"
+}
