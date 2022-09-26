@@ -1,10 +1,10 @@
-const users = []
 let loggedUser
 
 regBtn.onclick = () => regDialog.showModal()
 loginBtn.onclick = () => loginDialog.showModal()
 
-logoutBtn.onclick = () => {
+logoutBtn.onclick = async () => {
+  await requestLogout()
   userPanel.hidden = true
   guestPanel.hidden = false
 }
@@ -21,13 +21,13 @@ regForm.onsubmit = handleRegistation
 
 loginForm.onsubmit = handleLogin
 
-function handleLogin() {
+async function handleLogin() {
   const user = {
     login: loginForm.login.value,
     pass: loginForm.pass.value
   }
 
-  loggedUser = users.find(u => user.login == u.login && user.pass == u.pass)
+  loggedUser = await requestLogin(user)
 
   if (loggedUser) {
     loginDialog.close()
@@ -40,13 +40,49 @@ function handleLogin() {
   }
 }
 
-function handleRegistation() {
+async function requestLogin(user) {
+  const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(user)
+  }
+
+  const response = await fetch('/api/login', options)
+
+  return response.ok ? user : null
+}
+
+async function handleRegistation() {
   const user = {
     login: regForm.login.value,
     pass: regForm.pass.value
   }
 
-  users.push(user)
+  await requestRegistration(user)
   regDialog.close()
   regForm.reset()
+}
+
+async function requestRegistration(user) {
+  const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(user)
+  }
+
+  const response = await fetch('/api/register', options)
+
+  return response.ok ? user : null
+}
+
+async function requestLogout() {
+  const options = {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(loggedUser)
+  }
+
+  const response = await fetch('/api/logout', options)
+
+  return response.ok
 }
